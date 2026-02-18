@@ -3,8 +3,8 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour
 {
     public Rigidbody rb;
-    public float forwardForce = 1500f;
-    public float sidewaysForce = 500f;
+    public float forwardForce = 50f;
+    public float sidewaysForce = 25f;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,19 +18,19 @@ public class playerMovement : MonoBehaviour
                                                       //fraction to make the speed of the cube constant with different frame rates
         if (Input.GetKey("w"))
         {
-            rb.AddForce(0, 0, forwardForce * Time.deltaTime);
+            rb.AddForce(0, 0, forwardForce * Time.deltaTime, ForceMode.VelocityChange);
         }
         if (Input.GetKey("a"))
         {
-            rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0);
+            rb.AddForce(-1*sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
         if (Input.GetKey("s"))
         {
-            rb.AddForce(0, 0, -1*forwardForce * Time.deltaTime);
+            rb.AddForce(0, 0, -1*forwardForce * Time.deltaTime, ForceMode.VelocityChange);
         }
         if (Input.GetKey("d"))
         {
-            rb.AddForce(-1* sidewaysForce * Time.deltaTime, 0, 0);
+            rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
     }
 }
