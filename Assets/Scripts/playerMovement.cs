@@ -34,6 +34,7 @@ public class playerMovement : MonoBehaviour
         }
         if(rb.position.y < -1f)
         {
+            //Debug.Log("game over function would have been called from playerMovement.cs");
             GameObject.Find("GameManager").GetComponent<gameManager>().gameOver();
         }
     }//end of fixed update
