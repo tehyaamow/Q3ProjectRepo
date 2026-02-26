@@ -11,7 +11,7 @@ public class playerCollision : MonoBehaviour
             movement.enabled = false;
             GameObject.Find("GameManager").GetComponent<gameManager>().gameOver();
         }
-        Debug.Log(CollisionInfo.collider.tag);
+        Debug.Log("Player has collided with = " + CollisionInfo.collider.tag);
     }
     // Start is called before the first frame update
 }

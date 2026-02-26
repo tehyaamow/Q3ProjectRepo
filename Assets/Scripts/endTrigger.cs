@@ -3,11 +3,14 @@ using UnityEngine;
 public class endTrigger : MonoBehaviour
 {
    
-   void OnTriggerEnter(Collider collisionInfo)
+   void OnTriggerEnter(Collider other)
     {
-        if (CollisonInfo.collider.tag == "levelEnd"){
+        //Debug.Log("end checkpoint has touched = " + other.tag);
+        if (other.CompareTag("player"))
+        {
             GameObject.Find("GameManager").GetComponent<gameManager>().completeLevel();
         }
+            
         
     }
 }

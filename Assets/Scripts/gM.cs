@@ -7,7 +7,8 @@ public class gameManager : MonoBehaviour
     public GameObject completeLevelUI;
     public void completeLevel()
     {
-        Debug.Log("Player has completed level");
+        Debug.Log("Player has completed the level");
+        
         completeLevelUI.SetActive(true);
         
     }
@@ -16,6 +17,7 @@ public class gameManager : MonoBehaviour
         //Debug.Log("GameOver method has been called");
         if (gameHasEnded == false)
         {
+            //
             Debug.Log("Game Over");
             gameHasEnded = true;
             Invoke("Restart", restartWait);
